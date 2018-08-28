@@ -19,8 +19,10 @@ Route::get('/', function () {
         'https://nodejs.org/es/' => 'NodeJs'
         //    Key                       Value         
     ];
+    $autor = 'Pablo Daniel';
 
     return view('welcome', [
+        'autor' => $autor,
         'links' => $links
     ]);
 });

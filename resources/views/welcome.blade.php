@@ -82,6 +82,13 @@
                     Pablo JS
                 </div>
 
+               <!-- If Propio para vver como e pasan parametros --> 
+               @if (isset( $autor ))
+               <p>Att : {{ $autor }}</p>
+               @else
+               <p>Autor no definido</p> 
+               @endif 
+
                 <div class="links">
                    @foreach( $links as $link => $text)
                    <a href="{{ $link }}">{{ $text }}</a>
