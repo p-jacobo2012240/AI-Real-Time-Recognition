@@ -11,6 +11,21 @@
 |
 */
 
+//Vista Home
 Route::get('/', function () {
-    return view('welcome');
+    $links = [
+        'https://github.com/p-jacobo2012240' => 'Mi Github',
+        'https://laravel.com/' => 'Laravel',
+        'https://nodejs.org/es/' => 'NodeJs'
+        //    Key                       Value         
+    ];
+
+    return view('welcome', [
+        'links' => $links
+    ]);
+});
+
+//Vista Acerca de
+Route::get('/acerca', function (){
+    return view('about');
 });
