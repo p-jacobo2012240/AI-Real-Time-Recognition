@@ -57,3 +57,7 @@ composer create-project --prefer-dist laravel/laravel blog
 ## Init 
 
 php artisan serve
+
+##Create Controller
+
+php artisan make:controller PagesController
