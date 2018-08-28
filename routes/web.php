@@ -12,22 +12,7 @@
 */
 
 //Vista Home
-Route::get('/', function () {
-    $links = [
-        'https://github.com/p-jacobo2012240' => 'Mi Github',
-        'https://laravel.com/' => 'Laravel',
-        'https://nodejs.org/es/' => 'NodeJs'
-        //    Key                       Value         
-    ];
-    $autor = 'Pablo Daniel';
-
-    return view('welcome', [
-        'autor' => $autor,
-        'links' => $links
-    ]);
-});
+Route::get('/',  'PagesController@home'  ); //Resive un String
 
 //Vista Acerca de
-Route::get('/acerca', function (){
-    return view('about');
-});
+Route::get('/acerca', 'PagesController@acerca' );  //Resiviendo un String de path
