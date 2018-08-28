@@ -58,6 +58,6 @@ composer create-project --prefer-dist laravel/laravel blog
 
 php artisan serve
 
-##Create Controller
+## Create Controller
 
 php artisan make:controller PagesController
