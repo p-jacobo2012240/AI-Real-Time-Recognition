@@ -61,3 +61,22 @@ php artisan serve
 ## Create Controller
 
 php artisan make:controller PagesController
+
+##Create Migrations
+
+php artisan make:migration create_messages_table --create messages
+
+##Run Migrations
+
+php artisan migrate
+
+##Alter migration
+
+php artisan make:migration add_index_to_table_messages --table messages
+
+
+##Para retroceder en migraciones
+
+php artisan migrate:rollback --Ir un migrate atras
+php artisan migrate:reset    --Para tirar todo 
+php artisan migrate:refresh  -- Para reconstruir todo
