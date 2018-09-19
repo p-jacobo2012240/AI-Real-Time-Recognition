@@ -79,4 +79,4 @@ php artisan make:migration add_index_to_table_messages --table messages
 
 php artisan migrate:rollback --Ir un migrate atras
 php artisan migrate:reset    --Para tirar todo 
-php artisan migrate:refresh  -- Para reconstruir todo
+php artisan migrate:refresh  -- Para reconstruir todoo
