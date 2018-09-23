@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Message;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -15,7 +16,9 @@ class PagesController extends Controller
             //    Key                       Value         
         ];
         $autor = 'Pablo Daniel';
-    
+        
+        $messages = Message::all();
+
         return view('welcome', [
             'autor' => $autor,
             'links' => $links
