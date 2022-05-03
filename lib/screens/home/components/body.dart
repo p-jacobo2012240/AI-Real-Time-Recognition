@@ -23,18 +23,17 @@ class Body extends StatelessWidget {
             ),
             Positioned(
                 bottom: 0,
-                left: 0,
-                right: 0,
+                left: 80,
+                right: 80,
                 child: Container(
-                    margin:
-                        const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-                    height: 54,
+                    margin: const EdgeInsets.all(10),
+                    height: 58,
+                    width: 20,
                     decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: const Center(
-                        child: Text("Analizador en tiempo real",
-                            textAlign: TextAlign.center))))
+                        borderRadius: BorderRadius.circular(30)),
+                    child: Center(
+                        child: Image.asset("images/app-base-icon.png")))),
           ]),
         )
       ],
