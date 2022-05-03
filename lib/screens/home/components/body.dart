@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ia_recognition/constants.dart';
+import 'package:ia_recognition/screens/home/components/header_app.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -8,35 +9,35 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Column(
-      children: <Widget>[
-        Container(
-          height: size.height * 0.2,
-          child: Stack(children: <Widget>[
-            Container(
-              height: size.height * 0.2 - 27,
-              decoration: const BoxDecoration(
-                  color: kPrimaryColor,
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(36),
-                      bottomRight: Radius.circular(36))),
+    return SingleChildScrollView(
+      child: Column(
+        children: <Widget>[
+          Header(size: size),
+          Container(height: kDefaultDivider), // divider
+          SizedBox(
+            height: 24,
+            child: Stack(
+              children: const <Widget>[
+                Text("Iniciar reconocimiento",
+                    style: TextStyle(color: kPrimaryColor, fontSize: 22))
+              ],
             ),
-            Positioned(
-                bottom: 0,
-                left: 80,
-                right: 80,
-                child: Container(
-                    margin: const EdgeInsets.all(10),
-                    height: 58,
-                    width: 20,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: Center(
-                        child: Image.asset("images/app-base-icon.png")))),
-          ]),
-        )
-      ],
+          ),
+          Container(height: kDefaultDivider), // divider
+          SizedBox(
+              child: Center(
+            child: Container(
+              height: 100,
+              width: 100,
+              decoration: BoxDecoration(
+                  border: Border.all(color: kPrimaryColor),
+                  color: kPrimaryColor,
+                  borderRadius: BorderRadius.circular(10.0)),
+              child: const Text("foo"),
+            ),
+          ))
+        ],
+      ),
     );
   }
 }
