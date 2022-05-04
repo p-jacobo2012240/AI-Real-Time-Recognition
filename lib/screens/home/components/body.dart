@@ -1,10 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ia_recognition/constants.dart';
 import 'package:ia_recognition/screens/home/components/header_app.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
+
+  @override
+  _BodyState createState() => new _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  String viewType = "Home";
 
   @override
   Widget build(BuildContext context) {
@@ -14,30 +20,32 @@ class Body extends StatelessWidget {
         children: <Widget>[
           Header(size: size),
           Container(height: kDefaultDivider), // divider
-          SizedBox(
-            height: 24,
-            child: Stack(
-              children: const <Widget>[
-                Text("Iniciar reconocimiento",
-                    style: TextStyle(color: kPrimaryColor, fontSize: 22))
-              ],
-            ),
-          ),
           Container(height: kDefaultDivider), // divider
-          SizedBox(
-              child: Center(
-            child: Container(
-              height: 100,
-              width: 100,
-              decoration: BoxDecoration(
-                  border: Border.all(color: kPrimaryColor),
-                  color: kPrimaryColor,
-                  borderRadius: BorderRadius.circular(10.0)),
-              child: const Text("foo"),
-            ),
-          ))
+          (viewType == "Home")
+              ? SizedBox(
+                  child: Center(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: kPrimaryColor),
+                    child: const Text("Iniciar reconocimiento",
+                        style: TextStyle(color: Colors.white, fontSize: 22)),
+                    onPressed: executeChange,
+                  ),
+                ))
+              : Center(
+                  child: Container(child: Text("Hello there")),
+                )
         ],
       ),
     );
+  }
+
+  executeChange() {
+    setState(() {
+      if (viewType == "Home") {
+        viewType = "ProcessIA";
+      } else {
+        viewType = "Home";
+      }
+    });
   }
 }
